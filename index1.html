@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdullah Janjua | Data Scientist</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #00d4ff;
+      --secondary-color: #ff6b6b;
+      --dark-bg: #0a0a0a;
+      --darker-bg: #050505;
+      --card-bg: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --border-color: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: rgba(10, 10, 10, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary-color) !important;
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--text-secondary) !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 100px 0;
+      scroll-margin-top: 80px;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 60px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* About Section */
+    .about-section {
+      text-align: center;
+      position: relative;
+    }
+
+    .profile-image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 40px;
+      border: 4px solid var(--primary-color);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Card Styles */
+    .custom-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: var(--primary-color);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .custom-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .card-text {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Button Styles */
+    .btn-custom {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+      color: white;
+    }
+
+    .btn-outline-custom {
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      background: transparent;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline-custom:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Skills Section */
+    .skill-card {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .skill-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50%;
+      font-size: 2rem;
+      color: white;
+    }
+
+    /* Skill Tags */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .skill-tag {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Contact Section */
+    .contact-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .contact-info:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
+      color: var(--primary-color);
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .profile-image {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Loading Animation */
+    .loading {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .loading.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <i class="fas fa-code me-2"></i>Abdullah Janjua | Data Scientist
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="container text-center">
+      <div class="loading loaded">
+        <h1 class="display-1 fw-bold mb-4">
+          <span style="color: var(--primary-color);">Hello, I'm</span><br>
+          <span style="background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Abdullah Janjua</span>
+        </h1>
+        <p class="lead mb-4" style="color: var(--text-secondary); font-size: 1.3rem;">
+          Data Scientist | Developer | AI/ML Engineer
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#about" class="btn-custom">Learn More</a>
+          <a href="#contact" class="btn-outline-custom">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title loading">About Me</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-center mb-4 mb-lg-0">
+          <img src="images/about/1.jpg" alt="Profile Picture" class="profile-image loading">
+        </div>
+        <div class="col-lg-6">
+          <div class="about-text loading">
+            <p>
+                I am a Data Scientist with a strong foundation in data analysis, machine learning, Python, SQL, and data visualization. I specialize in extracting insights from complex datasets, building predictive models, and creating interactive dashboards that make data-driven decisions easier and more impactful.
+            </p>
+            <p>
+                My experience covers the entire data science workflow—from exploratory analysis and feature engineering to model development, deployment, and reporting through dashboards. I am passionate about designing solutions that are technically sound, scalable, and tailored to real-world business and research needs.
+            </p>
+            <div class="mt-4">
+              <a href="#projects" class="btn-custom me-3">View Projects</a>
+              <a href="#skills" class="btn-outline-custom">My Skills</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="section-title loading">My Projects</h2>
+      <div class="row justify-content-center">
+        
+        <!-- Project 1 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="custom-card loading">
+            <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">Data Science Analysis on Factors Affecting 1st SGPA</h5>
+              <p class="card-text">
+                Collected real-world data from students via Google Forms and performed cleaning and preprocessing 
+                using Python, Pandas, and NumPy. Conducted statistical analysis and EDA with Seaborn and Matplotlib in python to extract insights, then trained a Machine Learning
+                model to predict student GPA. Built a dashboard based on insights extracted from data analysis on tableau. Developed and deployed a Flask-based web app on Vercel, enabling real-time GPA predictions through an interactive 
+                user interface.
+              </p>
+              <div class="d-flex gap-2">
+                <a href="https://www.linkedin.com/posts/mabdullahjanjua_datascience-machinelearning-python-activity-7335994810635350016-Bcp6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0kudwB-TLu0IO-WbKZDoWYc0lADbQP-uo" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/Data-Science-Analysis-on-Factors-Affecting-1st-SGPA" class="btn-outline-custom">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="custom-card loading">
+            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Sales Dashboard</h5>
+              <p class="card-text">
+                Designed professional sales dashboards in Google Looker Studio, Tableau and IBM Cognos to visualize key metrics, enabling 
+data-driven business insights and reporting.
+              </p>
+              <div class="d-flex gap-2">
+                <a href="https://github.com/abdullahjanjuas/Sales-Dashboards/blob/main/Sales_Report_Dashboard.pdf" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/Sales-Dashboards" class="btn-outline-custom">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="custom-card loading">
+            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+            <div class="card-body">
+              <h5 class="card-title">Maze AI</h5>
+              <p class="card-text">
+                Utilized and implemented different AI search strategies in python, so a computer could solve a Maze, blindly. 
+              </p>
+              <div class="d-flex gap-2">
+                <a href="https://github.com/abdullahjanjuas/MazeAI" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/MazeAI" class="btn-outline-custom">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="custom-card loading">
+            <img src="images/projects/4.jpg" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Classic Game Arcade</h5>
+              <p class="card-text">
+                Designed and implemented a modular gaming arcade in Python, developing multiple Python-based games and 
+integrating them into a unified system with a menu-driven interface for seamless gameplay selection. 
+              </p>
+              <div class="d-flex gap-2">
+                <a href="https://github.com/abdullahjanjuas/Classic-Game-Arcade" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/Classic-Game-Arcade" class="btn-outline-custom">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="section-title loading">Skills & Expertise</h2>
+      <div class="row justify-content-center">
+        
+                 <!-- Skill 1: Python -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">Python Programming</h5>
+             <p class="card-text">
+               Advanced Python development with expertise in data manipulation, 
+               statistical analysis, and automation. Proficient in comprehensive 
+               data science libraries and big data processing frameworks.
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">Pandas</span>
+               <span class="skill-tag">Polars</span>
+               <span class="skill-tag">PySpark</span>
+               <span class="skill-tag">NumPy</span>
+               <span class="skill-tag">SciPy</span>
+               <span class="skill-tag">Matplotlib</span>
+               <span class="skill-tag">Seaborn</span>
+               <span class="skill-tag">Plotly</span>
+               <span class="skill-tag">Scikit-learn</span>
+             </div>
+           </div>
+         </div>
+
+                 <!-- Skill 2: Machine Learning -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">Machine Learning</h5>
+             <p class="card-text">
+               Comprehensive ML expertise using Scikit-learn library. Building and 
+               deploying predictive models with advanced algorithms for classification, 
+               regression, and clustering.
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">Scikit-learn</span>
+               <span class="skill-tag">Classification</span>
+               <span class="skill-tag">Regression</span>
+             </div>
+           </div>
+         </div>
+
+                 <!-- Skill 3: SQL -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">SQL & Data Engineering</h5>
+             <p class="card-text">
+               Expert in SQL for complex data extraction, transformation, and analysis. 
+               Experience with data warehousing, ETL processes, and database optimization.
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">MySQL</span>
+               <span class="skill-tag">PostgreSQL</span>
+               <span class="skill-tag">ETL</span>
+             </div>
+           </div>
+         </div>
+
+                 <!-- Skill 4: Data Visualization -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">Data Visualization</h5>
+             <p class="card-text">
+               Creating interactive dashboards and compelling visualizations using 
+               Power BI, Looker Studio, and Python libraries (Matplotlib, Seaborn, Plotly).
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">Matplotlib</span>
+               <span class="skill-tag">Seaborn</span>
+               <span class="skill-tag">Power BI</span>
+               <span class="skill-tag">Google Looker Studio</span>
+               <span class="skill-tag">Tableau</span>
+               <span class="skill-tag">IBM Cognos</span>
+              
+             </div>
+           </div>
+         </div>
+
+                 <!-- Skill 5: Excel -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">Excel & Analytics</h5>
+             <p class="card-text">
+               Advanced Excel skills for data analysis, pivot tables, VBA automation, 
+               and business intelligence. Creating dynamic reports and dashboards.
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">Pivot Tables</span>
+               <span class="skill-tag">VBA</span>
+               <span class="skill-tag">Power Query</span>
+             </div>
+           </div>
+         </div>
+
+                 <!-- Skill 6: Statistical Analysis -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">Statistical Analysis</h5>
+             <p class="card-text">
+               Strong foundation in statistical methods, hypothesis testing, A/B testing, 
+               and experimental design. Translating data insights into actionable recommendations.
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">Hypothesis Testing</span>
+               <span class="skill-tag">A/B Testing</span>
+               <span class="skill-tag">Regression</span>
+             </div>
+           </div>
+         </div>
+
+                 <!-- Skill 7: EDA & Data Analysis -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">Exploratory Data Analysis</h5>
+             <p class="card-text">
+               Comprehensive EDA skills for uncovering patterns, detecting anomalies, 
+               and understanding data distributions. Creating insightful visualizations 
+               and statistical summaries.
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">Data Profiling</span>
+               <span class="skill-tag">Correlation Analysis</span>
+               <span class="skill-tag">Outlier Detection</span>
+             </div>
+           </div>
+         </div>
+
+                 <!-- Skill 8: Data Science Tools -->
+         <div class="col-lg-4 col-md-6 mb-4">
+           <div class="custom-card skill-card loading">
+             <div class="skill-icon">
+               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" style="width: 50px; height: 50px;">
+             </div>
+             <h5 class="card-title">Data Science Tools</h5>
+             <p class="card-text">
+               Proficient in industry-standard tools and platforms including Google Colab, 
+               Kaggle, Jupyter Notebooks, and Git for collaborative data science projects.
+             </p>
+             <div class="skill-tags">
+               <span class="skill-tag">Google Colab</span>
+               <span class="skill-tag">Kaggle</span>
+               <span class="skill-tag">Jupyter</span>
+               <span class="skill-tag">Git</span>
+               <span class="skill-tag">Github</span>
+             </div>
+           </div>
+         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="section-title loading">Get In Touch</h2>
+      
+             <!-- Contact Info -->
+       <div class="row justify-content-center mb-5">
+         <div class="col-md-6 mb-3">
+            <a href="mailto:abdullahjanjua1284@gmail.com" class="contact-info loading" style="text-decoration: none; color: inherit;">
+             <div class="contact-icon">
+               <i class="fas fa-envelope"></i>
+             </div>
+             <div>
+               <h6 class="mb-1">Email</h6>
+               <p class="mb-0">abdullahjanjua1284@gmail.com</p>
+               <small style="color: var(--primary-color);">Click to send email</small>
+             </div>
+           </a>
+         </div>
+         <div class="col-md-6 mb-3">
+           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdullahjanjua1284@gmail.com&su=Job Opportunity - Data Scientist Position&body=Hi Abdullah,%0D%0A%0D%0AI came across your portfolio and would like to discuss a potential opportunity.%0D%0A%0D%0ABest regards," class="contact-info loading" style="text-decoration: none; color: inherit;">
+             <div class="contact-icon">
+               <i class="fab fa-google"></i>
+             </div>
+             <div>
+               <h6 class="mb-1">Gmail</h6>
+               <p class="mb-0">Open in Gmail</p>
+               <small style="color: var(--primary-color);">Click to open Gmail</small>
+             </div>
+           </a>
+         </div>
+         <div class="col-md-6 mb-3">
+           <a href="tel:+923309500500" class="contact-info loading" style="text-decoration: none; color: inherit;">
+             <div class="contact-icon">
+               <i class="fas fa-phone"></i>
+             </div>
+             <div>
+               <h6 class="mb-1">Phone</h6>
+               <p class="mb-0">+92 330 9500500</p>
+               <small style="color: var(--primary-color);">Click to call</small>
+             </div>
+           </a>
+                  </div>
+       </div>
+
+       <!-- Additional Contact Options -->
+       <div class="row justify-content-center mb-5">
+         <div class="col-md-6 mb-3">
+           <a href="https://wa.me/923309500500?text=Hi Abdullah, I came across your portfolio and would like to discuss a potential opportunity." class="contact-info loading" style="text-decoration: none; color: inherit;">
+             <div class="contact-icon">
+               <i class="fab fa-whatsapp"></i>
+             </div>
+             <div>
+               <h6 class="mb-1">WhatsApp</h6>
+               <p class="mb-0">+92 330 9500500</p>
+               <small style="color: var(--primary-color);">Click to message on WhatsApp</small>
+             </div>
+           </a>
+         </div>
+         <div class="col-md-6 mb-3">
+           <a href="https://www.linkedin.com/in/mabdullahjanjua/" class="contact-info loading" style="text-decoration: none; color: inherit;">
+             <div class="contact-icon">
+               <i class="fab fa-linkedin"></i>
+             </div>
+             <div>
+               <h6 class="mb-1">LinkedIn</h6>
+               <p class="mb-0">Connect on LinkedIn</p>
+               <small style="color: var(--primary-color);">Click to view profile</small>
+             </div>
+           </a>
+         </div>
+       </div>
+
+       <!-- Social Links -->
+       <div class="social-links">
+         <a href="https://www.linkedin.com/in/mabdullahjanjua/" class="social-link loading">
+           <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+           <span>LinkedIn</span>
+         </a>
+         <a href="https://github.com/abdullahjanjuas" class="social-link loading">
+           <img src="icons/github.png" alt="GitHub" class="social-icon">
+           <span>GitHub</span>
+         </a>
+       </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4" style="background: var(--darker-bg); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <p class="mb-0" style="color: var(--text-secondary);">
+        © 2025 Abdullah Janjua. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Active navigation link highlighting
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('loaded');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all loading elements
+    document.querySelectorAll('.loading').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+      } else {
+        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+      }
+    });
+
+    // Add typing effect to hero section
+    function typeWriter(element, text, speed = 100) {
+      let i = 0;
+      element.innerHTML = '';
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    // Initialize typing effect when page loads
+    window.addEventListener('load', () => {
+      const heroTitle = document.querySelector('#home h1 span:last-child');
+      if (heroTitle) {
+        setTimeout(() => {
+          typeWriter(heroTitle, 'Abdullah Janjua', 150);
+        }, 1000);
+      }
+    });
+  </script>
+
+</body>
+</html>
