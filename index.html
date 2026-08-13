@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Abdullah Janjua | Data & AI Professional</title>
+  <title>Muhammad Abdullah Janjua | Data Scientist &amp; AI/ML Engineer</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --primary-color: #00d4ff;
@@ -37,12 +37,10 @@
       overflow-x: hidden;
     }
 
-    /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
 
-    /* Navbar Styles */
     .navbar {
       background: rgba(10, 10, 10, 0.95) !important;
       backdrop-filter: blur(10px);
@@ -82,7 +80,6 @@
       width: 100%;
     }
 
-    /* Section Styles */
     section {
       padding: 100px 0;
       scroll-margin-top: 80px;
@@ -99,7 +96,6 @@
       background-clip: text;
     }
 
-    /* About Section */
     .about-section {
       text-align: center;
       position: relative;
@@ -129,7 +125,6 @@
       line-height: 1.8;
     }
 
-    /* Card Styles */
     .custom-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -170,7 +165,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Button Styles */
     .btn-custom {
       background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
       border: none;
@@ -207,7 +201,6 @@
       transform: translateY(-2px);
     }
 
-    /* Skills Section */
     .skill-card {
       text-align: center;
       padding: 2rem;
@@ -226,7 +219,6 @@
       color: white;
     }
 
-    /* Skill Tags */
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
@@ -251,7 +243,6 @@
       box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
     }
 
-    /* Contact Section */
     .contact-info {
       display: flex;
       align-items: center;
@@ -312,7 +303,60 @@
       margin-right: 10px;
     }
 
-    /* Animations */
+    /* Experience section */
+    .experience-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .experience-card:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+    .experience-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .experience-role {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin: 0;
+    }
+
+    .experience-dates {
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .experience-meta {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-list {
+      color: var(--text-secondary);
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .experience-list li {
+      margin-bottom: 0.5rem;
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -328,24 +372,26 @@
       animation: fadeInUp 0.6s ease-out;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .section-title {
         font-size: 2rem;
       }
-      
+
       .profile-image {
         width: 200px;
         height: 200px;
       }
-      
+
       .social-links {
         flex-direction: column;
         align-items: center;
       }
+
+      .experience-dates {
+        white-space: normal;
+      }
     }
 
-    /* Loading Animation */
     .loading {
       opacity: 0;
       transform: translateY(20px);
@@ -364,12 +410,12 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#home">
-        <i class="fas fa-code me-2"></i>Muhammad Abdullah Janjua | Data & AI Professional
+        <i class="fas fa-code me-2"></i>Abdullah Janjua | Data &amp; AI Engineer
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -377,6 +423,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">Projects</a>
@@ -398,10 +447,10 @@
       <div class="loading loaded">
         <h1 class="display-1 fw-bold mb-4">
           <span style="color: var(--primary-color);">Hello, I'm</span><br>
-          <span style="background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">M. Abdullah Janjua</span>
+          <span style="background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Abdullah Janjua</span>
         </h1>
         <p class="lead mb-4" style="color: var(--text-secondary); font-size: 1.3rem;">
-         Data & AI Professional
+         Building data pipelines and AI systems, from ETL and dashboards to agentic AI and LLM applications.
         </p>
         <div class="d-flex justify-content-center gap-3">
           <a href="#about" class="btn-custom">Learn More</a>
@@ -417,27 +466,92 @@
       <h2 class="section-title loading">About Me</h2>
       <div class="row align-items-center">
         <div class="col-lg-6 text-center mb-4 mb-lg-0">
-          <img src="images/about/2.jpeg" alt="Profile Picture" class="profile-image loading">
+          <img src="images/about/1.jpg" alt="Profile Picture" class="profile-image loading">
         </div>
         <div class="col-lg-6">
           <div class="about-text loading">
-           <p>
-    I build end-to-end data solutions, spanning data engineering, analytics, machine learning, and AI-powered applications. My foundation is designing scalable, reliable data systems that make data accessible, trustworthy, and ready for any downstream use, whether that is a dashboard, a predictive model, or an intelligent application.
-          </p>
-          <p>
-    My work covers the full data lifecycle. I design and build ETL/ELT pipelines, model data for analytics, perform exploratory analysis, and develop and deploy machine learning models. I deliver insights through dashboards and APIs, working comfortably across the roles of data engineer, data analyst, data scientist, and AI engineer depending on what the problem demands.
-          </p>
-           <p>
-    I have hands-on experience with Generative AI and AI engineering, including LLM-based applications, LangChain pipelines, vector databases, and agentic AI workflows integrated with both structured and unstructured data sources. This allows me to connect traditional data infrastructure with modern AI systems in ways that are practical and production ready.
-           </p>
-           <p>
-    I am proficient in Python, SQL, cloud data platforms, machine learning workflows, and data visualization. Across every engagement, my focus is the same: building solutions that are scalable, maintainable, and aligned with real business and research outcomes.
-           </p>
+            <p>
+                I'm a Data Scientist and AI Engineer who builds systems that turn messy, real-world data into decisions people can act on. At S&amp;P Global, a Fortune 500 enterprise, I built an agentic AI pipeline that automated a process previously done manually by data analysts, reaching over 85% straight through processing and over 99% accuracy. It was reviewed by senior Data and AI leadership and global stakeholders and is now being moved into production.
+            </p>
+            <p>
+                My work spans the full data and AI stack: RAG pipelines and LLM applications, large-scale ETL with Polars and PySpark, and machine learning models taken from raw data through to deployed, user-facing tools. I care about building things that are technically solid, scale well, and actually solve the problem in front of me.
+            </p>
             <div class="mt-4">
-              <a href="#projects" class="btn-custom me-3">View Projects</a>
-              <a href="#skills" class="btn-outline-custom">My Skills</a>
+              <a href="#experience" class="btn-custom me-3">My Experience</a>
+              <a href="#projects" class="btn-outline-custom">View Projects</a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-5">
+    <div class="container">
+      <h2 class="section-title loading">Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+          <div class="experience-card loading">
+            <div class="experience-header">
+              <h5 class="experience-role">Data Scientist Intern at S&amp;P Global</h5>
+              <span class="experience-dates">Jun 2026 &ndash; Aug 2026</span>
+            </div>
+            <p class="experience-meta">Global Intern (Remote)</p>
+            <ul class="experience-list">
+              <li>Built an end-to-end agentic AI pipeline on S&amp;P Global's enterprise Spark platform to extract required data points from unstructured, multi-format financial documents, replacing a fully manual analyst process.</li>
+              <li>Achieved over 85% straight through processing and over 99% accuracy; the pipeline was reviewed by senior Data and AI leadership and global stakeholders and approved for production.</li>
+            </ul>
+          </div>
+
+          <div class="experience-card loading">
+            <div class="experience-header">
+              <h5 class="experience-role">AI Engineer Intern at TenX</h5>
+              <span class="experience-dates">Dec 2025 &ndash; Jan 2026</span>
+            </div>
+            <p class="experience-meta">Islamabad, Pakistan</p>
+            <ul class="experience-list">
+              <li>Built a multi-modal healthcare document AI pipeline using PyTesseract, pdfplumber, and Camelot to extract structured lab values from any PDF format, achieving over 90% extraction accuracy and cutting report processing time from 10 minutes to under 30 seconds.</li>
+              <li>Integrated a RAG pipeline using LangChain, Chroma DB, and HuggingFace embeddings to ground LLaMA-3 (Groq API) responses in verified medical references, producing citation backed outputs through a Streamlit interface.</li>
+            </ul>
+          </div>
+
+          <div class="experience-card loading">
+            <div class="experience-header">
+              <h5 class="experience-role">Data Engineer Intern at Letsremotify</h5>
+              <span class="experience-dates">Aug 2025 &ndash; Oct 2025</span>
+            </div>
+            <p class="experience-meta">Remote</p>
+            <ul class="experience-list">
+              <li>Built an end-to-end ETL pipeline processing a 3+ GB dataset with millions of records, migrating from Pandas to Polars and PySpark to cut processing time by nearly 5x.</li>
+              <li>Applied text embeddings, UMAP, and clustering to segment company data into labeled market groups, and built an LLM-powered Streamlit app for stakeholders to query the data directly.</li>
+            </ul>
+          </div>
+
+          <div class="experience-card loading">
+            <div class="experience-header">
+              <h5 class="experience-role">Software Development Intern at Fauji Fertilizer Company (FFC), Sona Tower</h5>
+              <span class="experience-dates">Jul 2025 &ndash; Sep 2025</span>
+            </div>
+            <p class="experience-meta">Islamabad, Pakistan</p>
+            <ul class="experience-list">
+              <li>Optimized SQL Server queries through indexing and execution plan analysis, improving average application response time by about 40% across internal dashboards.</li>
+              <li>Built internal reporting tools using ASP.NET Blazor to automate workflows across operational departments.</li>
+            </ul>
+          </div>
+
+          <div class="experience-card loading">
+            <div class="experience-header">
+              <h5 class="experience-role">Database Intern at Heavy Mechanical Complex, Taxila</h5>
+              <span class="experience-dates">Aug 2024 &ndash; Sep 2024</span>
+            </div>
+            <p class="experience-meta">Taxila, Pakistan</p>
+            <ul class="experience-list">
+              <li>Managed and queried MySQL databases to support structured reporting and operational analysis for engineering departments.</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
@@ -448,51 +562,68 @@
     <div class="container">
       <h2 class="section-title loading">My Projects</h2>
       <div class="row justify-content-center">
-              <!-- Project 1 -->
+
+      <!-- Project 0: TALASH -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="custom-card loading">
-          <img src="images/projects/medassist.png" class="card-img-top" alt="MedAssist Insight">
+          <img src="images/projects/talash.jpg" class="card-img-top" alt="TALASH AI Recruitment System">
+          <div class="card-body">
+            <h5 class="card-title">TALASH: AI-Powered Smart HR Recruitment System</h5>
+            <p class="card-text">
+              Built an LLM-based CV extraction pipeline using Groq LLaMA-3.3-70B that converts unstructured resumes into structured data across 8 categories. Designed a deterministic, hallucination-resistant scoring engine across 7 modules, matched candidate institutions against 1,500+ QS-ranked universities, and presented results through a Streamlit dashboard.
+            </p>
+            <div class="d-flex gap-2">
+              <a href="https://github.com/abdullahjanjuas/talash" class="btn-outline-custom">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="custom-card loading">
+          <img src="images/projects/medassist.jpg" class="card-img-top" alt="MedAssist Insight">
           <div class="card-body">
             <h5 class="card-title">MedAssist Insight</h5>
             <p class="card-text">
               Built an end-to-end Generative & Agentic AI pipeline in Python to process unstructured medical lab reports using OCR, NLP, and ETL workflows. Designed a RAG-based knowledge retrieval system and deployed an interactive Streamlit app for real-time insights.
             </p>
             <div class="d-flex gap-2">
-              <a href="https://www.linkedin.com/posts/mabdullahjanjua_generative-ai-medical-assistant-end-to-end-activity-7420837152395190272-BZ48?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0kudwB-TLu0IO-WbKZDoWYc0lADbQP-uo" class="btn-custom">Demo</a>
+              <a href="#" class="btn-custom">Demo</a>
               <a href="https://github.com/abdullahjanjuas/MedAssist-Insight" class="btn-outline-custom">GitHub</a>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Project 2 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="custom-card loading">
-          <img src="images/projects/Dashboard_1.png" class="card-img-top" alt="News Analytics ETL Pipeline">
+          <img src="images/projects/news_etl.jpg" class="card-img-top" alt="News Analytics ETL Pipeline">
           <div class="card-body">
             <h5 class="card-title">End-to-End News Analytics ETL Pipeline</h5>
             <p class="card-text">
               Designed a complete ETL pipeline to extract news articles, clean & normalize text, generate embeddings, perform clustering and classification, and create analytics-ready datasets for sentiment, keywords, and locations.
             </p>
             <div class="d-flex gap-2">
+              <a href="#" class="btn-custom">Demo</a>
               <a href="https://github.com/abdullahjanjuas/News-Analytics-ETL-Pipeline" class="btn-outline-custom">GitHub</a>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Project 3 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="custom-card loading">
-          <img src="images/projects/Dashboard_2.png" class="card-img-top" alt="Media Sentiment Dashboard">
+          <img src="images/projects/media_dashboard.jpg" class="card-img-top" alt="Media Sentiment Dashboard">
           <div class="card-body">
             <h5 class="card-title">Media Sentiment & Regional Insights Dashboard</h5>
             <p class="card-text">
               Built interactive Power BI dashboards on top of the NLP data pipeline to analyze news sentiment trends by category, location, and time, enabling exploratory and comparative analysis.
             </p>
             <div class="d-flex gap-2">
-              <a href="https://github.com/abdullahjanjuas/End-to-End-News-Analytics-ETL-Pipeline/tree/main/Media%20Sentiment%20and%20Regional%20Insights%20Dashboards/Dashboards%20Overview" class="btn-custom">Demo</a>
-              <a href="https://github.com/abdullahjanjuas/End-to-End-News-Analytics-ETL-Pipeline/tree/main/Media Sentiment and Regional Insights Dashboards" class="btn-outline-custom">GitHub</a>
+              <a href="#" class="btn-custom">Demo</a>
             </div>
           </div>
         </div>
@@ -501,14 +632,14 @@
       <!-- Project 4 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="custom-card loading">
-          <img src="images/projects/company_atlas.png" class="card-img-top" alt="Company Atlas">
+          <img src="images/projects/company_atlas.jpg" class="card-img-top" alt="Company Atlas">
           <div class="card-body">
             <h5 class="card-title">Company Atlas</h5>
             <p class="card-text">
               Built an end-to-end data & ML pipeline in Python with scalable ETL workflows using Polars & PySpark. Applied NLP and unsupervised learning to generate company clusters and deployed an interactive Streamlit app for cluster visualization & analytics.
             </p>
             <div class="d-flex gap-2">
-              <a href="https://www.linkedin.com/posts/mabdullahjanjua_dataengineering-machinelearning-nlp-activity-7386464567935275010-L0Y7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0kudwB-TLu0IO-WbKZDoWYc0lADbQP-uo" class="btn-custom">Demo</a>
+              <a href="#" class="btn-custom">Demo</a>
               <a href="https://github.com/abdullahjanjuas/Company-Atlas" class="btn-outline-custom">GitHub</a>
             </div>
           </div>
@@ -522,14 +653,14 @@
             <div class="card-body">
               <h5 class="card-title">Data Science Analysis on Factors Affecting 1st SGPA</h5>
               <p class="card-text">
-                Collected real-world data from students via Google Forms and performed cleaning and preprocessing 
+                Collected real-world data from students via Google Forms and performed cleaning and preprocessing
                 using Python, Pandas, and NumPy. Conducted statistical analysis and EDA with Seaborn and Matplotlib in python to extract insights, then trained a Machine Learning
-                model to predict student GPA. Built a dashboard based on insights extracted from data analysis on tableau. Developed and deployed a Flask-based web app on Vercel, enabling real-time GPA predictions through an interactive 
+                model to predict student GPA. Built a dashboard based on insights extracted from data analysis on tableau. Developed and deployed a Flask-based web app on Vercel, enabling real-time GPA predictions through an interactive
                 user interface.
               </p>
               <div class="d-flex gap-2">
-                <a href="https://www.linkedin.com/posts/mabdullahjanjua_datascience-machinelearning-python-activity-7335994810635350016-Bcp6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0kudwB-TLu0IO-WbKZDoWYc0lADbQP-uo" class="btn-custom">Demo</a>
-                <a href="https://github.com/abdullahjanjuas/Data-Science-Analysis-on-Factors-Affecting-1st-SGPA" class="btn-outline-custom">GitHub</a>
+                <a href="https://www.linkedin.com/posts/mabdullahjanjua_datascience-machinelearning-python-activity-7335994810635350016-Bcp6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0kudwB-TLu0IO-WbKZDoWYc0lADbQP-uo" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/Data-Science-Analysis-on-Factors-Affecting-1st-SGPA" class="btn-outline-custom">Source Code</a>
               </div>
             </div>
           </div>
@@ -538,16 +669,16 @@
         <!-- Project 6 -->
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="custom-card loading">
-            <img src="images/projects/2.JPG" class="card-img-top" alt="Project 2">
+            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
             <div class="card-body">
               <h5 class="card-title">Sales Dashboard</h5>
               <p class="card-text">
-                Designed professional sales dashboards in Google Looker Studio, Tableau and IBM Cognos to visualize key metrics, enabling 
+                Designed professional sales dashboards in Google Looker Studio, Tableau and IBM Cognos to visualize key metrics, enabling
 data-driven business insights and reporting.
               </p>
               <div class="d-flex gap-2">
-                <a href="https://github.com/abdullahjanjuas/Sales-Dashboards/blob/main/Sales_Report_Dashboard.pdf" class="btn-custom">Demo</a>
-                <a href="https://github.com/abdullahjanjuas/Sales-Dashboards" class="btn-outline-custom">Github</a>
+                <a href="https://github.com/abdullahjanjuas/Sales-Dashboards/blob/main/Sales_Report_Dashboard.pdf" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/Sales-Dashboards" class="btn-outline-custom">Source Code</a>
               </div>
             </div>
           </div>
@@ -556,14 +687,15 @@ data-driven business insights and reporting.
         <!-- Project 7 -->
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="custom-card loading">
-            <img src="images/projects/3.JPG" class="card-img-top" alt="Project 3">
+            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
             <div class="card-body">
               <h5 class="card-title">Maze AI</h5>
               <p class="card-text">
-                Utilized and implemented different AI search strategies in python, so a computer could solve a Maze, blindly. 
+                Utilized and implemented different AI search strategies in python, so a computer could solve a Maze, blindly.
               </p>
               <div class="d-flex gap-2">
-                <a href="https://github.com/abdullahjanjuas/MazeAI" class="btn-outline-custom">GitHub</a>
+                <a href="https://github.com/abdullahjanjuas/MazeAI" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/MazeAI" class="btn-outline-custom">Source Code</a>
               </div>
             </div>
           </div>
@@ -572,20 +704,20 @@ data-driven business insights and reporting.
         <!-- Project 8 -->
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="custom-card loading">
-            <img src="images/projects/4.JPG" class="card-img-top" alt="Project 2">
+            <img src="images/projects/4.jpg" class="card-img-top" alt="Project 2">
             <div class="card-body">
               <h5 class="card-title">Classic Game Arcade</h5>
               <p class="card-text">
-                Designed and implemented a modular gaming arcade in Python, developing multiple Python-based games and 
-integrating them into a unified system with a menu-driven interface for seamless gameplay selection. 
+                Designed and implemented a modular gaming arcade in Python, developing multiple Python-based games and
+integrating them into a unified system with a menu-driven interface for seamless gameplay selection.
               </p>
               <div class="d-flex gap-2">
-                <a href="https://github.com/abdullahjanjuas/Classic-Game-Arcade" class="btn-outline-custom">GitHub</a>
+                <a href="https://github.com/abdullahjanjuas/Classic-Game-Arcade" class="btn-custom">View Project</a>
+                <a href="https://github.com/abdullahjanjuas/Classic-Game-Arcade" class="btn-outline-custom">Source Code</a>
               </div>
             </div>
           </div>
         </div>
-
 
       </div>
     </div>
@@ -652,8 +784,8 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">Python Programming</h5>
              <p class="card-text">
-               Advanced Python development with expertise in data manipulation, 
-               statistical analysis, and automation. Proficient in comprehensive 
+               Advanced Python development with expertise in data manipulation,
+               statistical analysis, and automation. Proficient in comprehensive
                data science libraries and big data processing frameworks.
              </p>
              <div class="skill-tags">
@@ -678,8 +810,8 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">Machine Learning</h5>
              <p class="card-text">
-               Comprehensive ML expertise using Scikit-learn library. Building and 
-               deploying predictive models with advanced algorithms for classification, 
+               Comprehensive ML expertise using Scikit-learn library. Building and
+               deploying predictive models with advanced algorithms for classification,
                regression, and clustering.
              </p>
              <div class="skill-tags">
@@ -698,7 +830,7 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">SQL</h5>
              <p class="card-text">
-               Expert in SQL for complex data extraction, transformation, and analysis. 
+               Expert in SQL for complex data extraction, transformation, and analysis.
                Experience with data warehousing, ETL processes, and database optimization.
              </p>
              <div class="skill-tags">
@@ -717,7 +849,7 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">Data Visualization</h5>
              <p class="card-text">
-               Creating interactive dashboards and compelling visualizations using 
+               Creating interactive dashboards and compelling visualizations using
                Power BI, Looker Studio, and Python libraries (Matplotlib, Seaborn, Plotly).
              </p>
              <div class="skill-tags">
@@ -727,7 +859,7 @@ integrating them into a unified system with a menu-driven interface for seamless
                <span class="skill-tag">Google Looker Studio</span>
                <span class="skill-tag">Tableau</span>
                <span class="skill-tag">IBM Cognos</span>
-              
+
              </div>
            </div>
          </div>
@@ -740,7 +872,7 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">Excel & Analytics</h5>
              <p class="card-text">
-               Advanced Excel skills for data analysis, pivot tables, VBA automation, 
+               Advanced Excel skills for data analysis, pivot tables, VBA automation,
                and business intelligence. Creating dynamic reports and dashboards.
              </p>
              <div class="skill-tags">
@@ -759,7 +891,7 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">Statistical Analysis</h5>
              <p class="card-text">
-               Strong foundation in statistical methods, hypothesis testing, A/B testing, 
+               Strong foundation in statistical methods, hypothesis testing, A/B testing,
                and experimental design. Translating data insights into actionable recommendations.
              </p>
              <div class="skill-tags">
@@ -778,8 +910,8 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">Exploratory Data Analysis</h5>
              <p class="card-text">
-               Comprehensive EDA skills for uncovering patterns, detecting anomalies, 
-               and understanding data distributions. Creating insightful visualizations 
+               Comprehensive EDA skills for uncovering patterns, detecting anomalies,
+               and understanding data distributions. Creating insightful visualizations
                and statistical summaries.
              </p>
              <div class="skill-tags">
@@ -798,7 +930,7 @@ integrating them into a unified system with a menu-driven interface for seamless
              </div>
              <h5 class="card-title">Data Science Tools</h5>
              <p class="card-text">
-               Proficient in industry-standard tools and platforms including Google Colab, 
+               Proficient in industry-standard tools and platforms including Google Colab,
                Kaggle, Jupyter Notebooks, and Git for collaborative data science projects.
              </p>
              <div class="skill-tags">
@@ -819,7 +951,7 @@ integrating them into a unified system with a menu-driven interface for seamless
   <section id="contact" class="py-5">
     <div class="container">
       <h2 class="section-title loading">Get In Touch</h2>
-      
+
              <!-- Contact Info -->
        <div class="row justify-content-center mb-5">
          <div class="col-md-6 mb-3">
@@ -913,7 +1045,7 @@ integrating them into a unified system with a menu-driven interface for seamless
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <!-- Custom JavaScript -->
   <script>
     // Smooth scrolling for navigation links
@@ -934,7 +1066,7 @@ integrating them into a unified system with a menu-driven interface for seamless
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-link');
-      
+
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -1000,7 +1132,7 @@ integrating them into a unified system with a menu-driven interface for seamless
       const heroTitle = document.querySelector('#home h1 span:last-child');
       if (heroTitle) {
         setTimeout(() => {
-          typeWriter(heroTitle, 'M. Abdullah Janjua', 150);
+          typeWriter(heroTitle, 'Abdullah Janjua', 150);
         }, 1000);
       }
     });
@@ -1008,18 +1140,3 @@ integrating them into a unified system with a menu-driven interface for seamless
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
